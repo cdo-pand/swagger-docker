@@ -1,0 +1,20 @@
+openapi: '3.0.0'
+info:
+    title: Betolimp logs API
+    description: Docs for [BetOlimp API](https://api2dev.betolimp.co.za).
+    version: 1.0.0
+
+servers:
+    -   url: https://google.com
+        description: Goolge example
+
+paths:
+    # ======================== Authorization ========================
+    /:
+        get:
+            summary: Get request example.
+            tags:
+                - Google
+            responses:
+                200:
+                    description: OK
