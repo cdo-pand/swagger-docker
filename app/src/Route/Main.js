@@ -10,7 +10,7 @@ const swaggerUi = require('swagger-ui-express')
 const yaml = require('yamljs')
 const swaggerDocument = yaml.load('./swagger.yml')
 const swaggerOptions = {
-    customSiteTitle: 'Betolimp API docs',
+    customSiteTitle: 'API docs',
     explorer: false,
     customCss: '.swagger-ui .topbar { display: none }' // hide header
 }

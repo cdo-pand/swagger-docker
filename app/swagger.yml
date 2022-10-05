@@ -1,15 +1,15 @@
 openapi: '3.0.0'
 info:
-    title: Betolimp logs API
-    description: Docs for [BetOlimp API](https://api2dev.betolimp.co.za).
+    title: API docs
+    description: Example swagger docs.
     version: 1.0.0
 
 servers:
     -   url: https://google.com
-        description: Goolge example
+        description: Google example
 
 paths:
-    # ======================== Authorization ========================
+    # ======================== Example ========================
     /:
         get:
             summary: Get request example.
