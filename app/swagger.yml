@@ -5,13 +5,15 @@ info:
     version: 1.0.0
 
 servers:
-    -   url: https://google.com
+#    -   url: https://google.com
+#    -   url: /app/health
+    -   url: /example
         description: Google example
 
 paths:
     # ======================== Example ========================
     /:
-        get:
+        post:
             summary: Get request example.
             tags:
                 - Google
