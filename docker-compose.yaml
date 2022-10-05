@@ -1,7 +1,7 @@
 services:
     gateway:
         build:
-            context: docker/swagger/development/nginx
+            context: docker/development/nginx
             args:
                 VERSION: 1.23-alpine
         ports:
@@ -12,7 +12,7 @@ services:
 
     app-swagger:
         build:
-            context: docker/swagger/development/node
+            context: docker/development/node
             args:
                 VERSION: lts-alpine3.15
         command: sh -c "npm run dev-run"
@@ -33,7 +33,7 @@ services:
     # Command line for install, check
     app-swagger-cli:
         build:
-            context: docker/swagger/development/node
+            context: docker/development/node
             args:
                 VERSION: lts-alpine3.15
         env_file: dev-swagger.env
