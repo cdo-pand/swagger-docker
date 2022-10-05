@@ -1,0 +1,41 @@
+services:
+    gateway:
+        build:
+            context: docker/swagger/development/nginx
+            args:
+                VERSION: 1.23-alpine
+        ports:
+            - "8080:80" # node swagger docs
+        restart: always
+        depends_on:
+            - app-swagger
+
+    app-swagger:
+        build:
+            context: docker/swagger/development/node
+            args:
+                VERSION: lts-alpine3.15
+        command: sh -c "npm run dev-run"
+        healthcheck:
+            test: "curl --fail http://localhost:3000/app/health || exit 1"
+            timeout: 10s
+            interval: 5s
+            start_period: 30s
+            retries: 3
+        restart: always
+        env_file: dev-swagger.env
+        volumes:
+            - ./app:/app
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+
+
+    # Command line for install, check
+    app-swagger-cli:
+        build:
+            context: docker/swagger/development/node
+            args:
+                VERSION: lts-alpine3.15
+        env_file: dev-swagger.env
+        volumes:
+            - ./app:/app
