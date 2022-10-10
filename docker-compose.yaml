@@ -5,7 +5,7 @@ services:
             args:
                 VERSION: 1.23-alpine
         ports:
-            - "8080:80" # node swagger docs
+            - "8080:8080" # node swagger docs
         restart: always
         depends_on:
             - app-swagger
